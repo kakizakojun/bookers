@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  get '/new' => 'books#new'
-  post '/new' => 'books#creat'
-  get '/index' => 'books#index'
-  get '/show' => 'books#show'
-  get '/edit' => 'books#edit'
-  get '/top' => 'homes#top'
+  get 'top' => 'homes#top'
+  get 'books/new' => 'books#new'
+  post 'books' => 'books#creat'
+  get 'books' => 'books#index'
+  
+  get 'edit' => 'books#edit'
+  get 'books/:id' => 'books#show',as: 'book'
+
+  # resources :books
+
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end
